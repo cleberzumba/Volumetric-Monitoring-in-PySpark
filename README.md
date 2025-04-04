@@ -79,7 +79,7 @@ Outlier removal is performed using conditional logic based on business knowledge
 ```python
 rule7_monitoring(sqlContext, "owner", "monitoring", "20241130", "20241031")
 rule8_monitoring(sqlContext, "owner", "monitoring", "20241130", "20241031")
-
+```
 
 📅 Timeline
 

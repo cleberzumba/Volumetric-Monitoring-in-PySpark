@@ -43,6 +43,7 @@ The pipeline includes:
 
 
 📦 volume-monitoring-pyspark
+
  ┣ 📄 README.md
  ┣ 📄 regra7_cubo.py
  ┗ 📄 regra8_cubo.py

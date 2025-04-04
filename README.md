@@ -54,5 +54,29 @@ Applies multiple filters to exclude outliers before comparing data volumes. Filt
 
 ## 🗂️ Project Structure
 
+volume-monitoring-rules/ │ ├── README.md ├── notebooks/ │ └── rule7_rule8_volume_monitoring.ipynb ├── scripts/ │ └── rule8_volume_monitoring.py
 
-Project developed over 3 months, including study of business rules, testing and technical validation.
+
+
+---
+
+## ✅ Execution Example
+
+```python
+regra8_cubo_omni(sqlContext, "dmaux", "tauxdm_monitoring", "20241130", "20241031")
+
+
+📅 Project Duration
+
+The project was developed over the course of 3 months, including:
+
+- Understanding complex business rules
+- Developing the pipeline in PySpark
+- Implementing outlier detection and filtering
+- Performing tests and validating results across different data sources
+- Project developed over 3 months, including study of business rules, testing and technical validation.
+
+
+🚀 Results
+
+The metrics generated were used to feed analytical dashboards, support data auditing, and ensure the quality and consistency of operational information related to vehicle financing.

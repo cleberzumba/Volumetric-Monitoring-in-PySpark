@@ -42,6 +42,12 @@ The pipeline includes:
 - **SQL**
 
 
+📦 volume-monitoring-pyspark
+ ┣ 📄 README.md
+ ┣ 📄 regra7_cubo.py
+ ┗ 📄 regra8_cubo.py
+
+
 ---
 
 ## 🛠️ Implemented Rules

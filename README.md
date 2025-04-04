@@ -1,106 +1,81 @@
-# 📊 Volume Monitoring with Business Rules (Rule 7 and Rule 8)
+# 📊 Volume Monitoring with Business Rules (Rule 7 & Rule 8)
 
-This project implements a data monitoring pipeline to identify significant changes in vehicle financing volumes across two reference periods. The goal is to apply business rules to assess data consistency, detect outliers, and analyze records segmented by document type (Individual or Corporate) and vehicle category (Light, Motorcycle, Heavy).
+This project implements a data monitoring pipeline to track significant changes in vehicle financing volumes across two processing dates. The goal is to ensure data quality, apply business rules, detect anomalies, and generate monitoring indicators segmented by document type (Individual or Corporate) and vehicle category (Light, Motorcycle, Heavy).
 
-⚠️ This project is a simulated implementation based on a real-world use case. All table and column names have been anonymized to protect confidential information.
-
-## 📊 Project Summary
-
-This project implements a data quality monitoring pipeline using Apache Spark and AWS Glue, focused on analyzing volumetric variations in financial contracts segmented by vehicle category and person type.
-
-The pipeline includes:
-
-- Ingestion from multiple source tables (saf500c, saf785c, decod_fipe, automovel_cvg, cadastro_unico).
-- Joins, transformations, and outlier removal rules.
-- Categorization (vehicle types, person type, etc.).
-- Calculation of variation metrics, classifications (OK, ATTENTION, NOT OK), and output formatting.
-- Compatibility with Glue Catalog and Athena (decimal types, naming standards, etc.).
-- Export to S3 in Parquet format and registration in Glue Catalog.
-
-⏱️ **Project duration**: ~3 months  
-🧠 **What I did**: Analysis, development, debugging, validation, and documentation.  
-
-
+> ⚠️ Note: This is a simulated project inspired by a real use case. All table and column names have been anonymized to protect sensitive information.
 
 ---
 
-## 🧠 Objective
+## 📈 Project Overview
 
-- Calculate the **overall volume** of records in two different processing dates.
-- Compare data volumes **with and without outlier removal**.
-- Classify results based on **percentage variation**.
-- Generate **indicators and status labels** to support decision-making.
+This monitoring system was developed using PySpark and AWS Glue to analyze volumetric trends and ensure data consistency in financial datasets. It is designed to compute and compare metrics across different processing dates, applying domain-specific rules for validation and classification.
+
+### Main Features
+
+- Ingestion from multiple anonymized source tables
+- Joins, column transformations, and rule-based outlier filtering
+- Categorization of vehicle types and person types
+- Calculation of metrics, variation percentages, and classification labels (OK, WARNING, NOT OK)
+- Compatibility with AWS Glue Catalog and Athena (decimal types, naming conventions, etc.)
+- Export to Amazon S3 in Parquet format with table registration in Glue Catalog
+
+🕒 **Estimated Duration**: ~3 months  
+🔧 **Responsibilities**: End-to-end development — analysis, coding, testing, debugging, validation, and documentation
 
 ---
 
-## ⚙️ Technologies Used
+## 🎯 Objectives
+
+- Compute **record volumes** for two reference periods
+- Apply **business logic** to remove outliers before comparing datasets
+- Evaluate **percentage variations** across dimensions
+- Generate **monitoring indicators and statuses** for dashboards and auditing
+
+---
+
+## ⚙️ Technologies
 
 - **PySpark**
-- **Apche Spark**
+- **Apache Spark**
 - **AWS Glue**
 - **Amazon S3**
-- **Athena**
+- **AWS Athena**
 - **SQL**
 
+---
+
+## 🧪 Implemented Rules
+
+### ✅ Rule 7 — Total Volume (No Filters)
+
+Compares raw record volumes segmented by person type and vehicle category. No filters are applied.
+
+### ✅ Rule 8 — Volume After Outlier Filtering
+
+Applies business logic to filter out records considered outliers based on:
+
+- Minimum financing value
+- Invalid or extreme values
+- Invalid vehicle attributes
+- Missing required fields
+- Domain-specific flags
+
+Outlier removal is performed using conditional logic based on business knowledge.
 
 ---
 
-## 🛠️ Implemented Rules
+## 📊 Calculated Metrics
 
-### ✅ Rule 7 — Overall Volume
-
-Evaluates data volume by document type and vehicle category **without outlier filtering**.
-
-### ✅ Rule 8 — Overall Volume with Outlier Removal
-
-Applies multiple filters to exclude outliers before comparing data volumes. Filters include:
-
-- `vlr_tot_financ >= 1000`
-- `vlr_tot_financ <> 999999.99 AND <> 9999999.99`
-- `idade_compra >= -1`
-- Specific flags: `flag_tx_juros = 'TRUE'`, `flag_tx_usado = 'FALSE'`, etc.
-- Non-null constraints: `tipo_pessoa`, `ct_veic_tipo`, `ct_veic_idade`, `uf_licenciamento`, `flag_cvg`, `flag_consorcio`, `cnpj_credor`
-
-Outlier removal was performed through rule-based filtering, applying business logic to exclude invalid financing values, inconsistencies in vehicle attributes, and missing critical fields.
+- `current_metric_value`: Record count on the current processing date
+- `previous_metric_value`: Record count on the previous processing date
+- `percentage_variation`: Absolute percentage difference between dates
+- `metric_status`: Monitoring label — OK, WARNING, NOT OK
+- `metric_status_description`: Describes the variation level
 
 ---
 
-## 📊 Metrics Calculated
-
-- **current_metric_value**: Current volume count.
-- **previous_metric value**: Previous volume count.
-- **percentage_variation**: Percentage change.
-- **nome_status_metrica**: Status label (OK, ATTENTION, NOT OK).
-- **descricao_status_metrica**: Textual explanation of the percentage range.
-
----
-
-## ✅ Execution Example
+## ▶️ Example Execution
 
 ```python
 rule7_monitoring(sqlContext, "owner", "monitoring", "20241130", "20241031")
 rule8_monitoring(sqlContext, "owner", "monitoring", "20241130", "20241031")
-```
-
----
-
-## 📅 Project Duration
-
-The project was developed over the course of **3 month**, including:
-
-- Understanding complex **business rules**
-- Developing the pipeline in **PySpark**
-- Implementing **outlier detection and filtering**
-- Performing tests and validating results across different data sources
-
----
-
-## 🚀 Results
-
-The metrics generated were used to feed **analytical dashboards**, support data auditing, and ensure the quality and consistency of operational information related to vehicle financing.
-
----
-
-## 📌 Author
-
-Developed by a Data Engineer specializing in PySpark, Data Quality, and Volume Monitoring for large-scale datasets.

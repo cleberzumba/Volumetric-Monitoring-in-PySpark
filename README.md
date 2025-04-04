@@ -79,3 +79,23 @@ Outlier removal is performed using conditional logic based on business knowledge
 ```python
 rule7_monitoring(sqlContext, "owner", "monitoring", "20241130", "20241031")
 rule8_monitoring(sqlContext, "owner", "monitoring", "20241130", "20241031")
+
+
+📅 Timeline
+
+The project was completed in approximately 3 months, involving:
+
+- Understanding complex business rules
+- Designing the data pipeline architecture
+- Implementing transformation and validation logic in PySpark
+- Testing and refining outputs for consistency and accuracy
+
+
+📌 Author
+
+Developed by a Data Engineer with expertise in:
+
+- PySpark and distributed data processing
+- Data quality monitoring
+- Handling large-scale datasets and AWS-based ETL pipelines
+- Outlier detection, data validation, and analytics automation

@@ -10,3 +10,5 @@ Technologies used:
 - Amazon S3
 - Athena
 - SQL
+
+Project developed over 3 months, including study of business rules, testing and technical validation.

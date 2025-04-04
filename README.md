@@ -81,7 +81,7 @@ rule7_monitoring(sqlContext, "owner", "monitoring", "20241130", "20241031")
 rule8_monitoring(sqlContext, "owner", "monitoring", "20241130", "20241031")
 ```
 
-📅 Timeline
+## 📅 Timeline
 
 The project was completed in approximately 3 months, involving:
 
@@ -91,7 +91,7 @@ The project was completed in approximately 3 months, involving:
 - Testing and refining outputs for consistency and accuracy
 
 
-📌 Author
+## 📌 Author
 
 Developed by a Data Engineer with expertise in:
 

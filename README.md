@@ -2,6 +2,26 @@
 
 This project implements a data monitoring pipeline to identify significant changes in vehicle financing volumes across two reference periods. The goal is to apply business rules to assess data consistency, detect outliers, and analyze records segmented by document type (Individual or Corporate) and vehicle category (Light, Motorcycle, Heavy).
 
+## 📊 Project Summary
+
+This project implements a data quality monitoring pipeline using Apache Spark and AWS Glue, focused on analyzing volumetric variations in financial contracts segmented by vehicle category and person type.
+
+The pipeline includes:
+
+- Ingestion from multiple source tables (saf500c, saf785c, decod_fipe, automovel_cvg, cadastro_unico).
+- Joins, transformations, and outlier removal rules.
+- Categorization (vehicle types, person type, etc.).
+- Calculation of variation metrics, classifications (OK, ATTENTION, NOT OK), and output formatting.
+- Compatibility with Glue Catalog and Athena (decimal types, naming standards, etc.).
+- Export to S3 in Parquet format and registration in Glue Catalog.
+
+⏱️ **Project duration**: ~3 months  
+🧠 **What I did**: Analysis, development, debugging, validation, and documentation.  
+🔧 **Tools**: PySpark, AWS Glue, S3, Athena, SQL
+
+> Real production logic and quality rules for pricing data in the financial domain.
+
+
 ---
 
 ## 🧠 Objective

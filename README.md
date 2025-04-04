@@ -2,6 +2,7 @@
 
 This project implements a data monitoring pipeline to identify significant changes in vehicle financing volumes across two reference periods. The goal is to apply business rules to assess data consistency, detect outliers, and analyze records segmented by document type (Individual or Corporate) and vehicle category (Light, Motorcycle, Heavy).
 
+⚠️ This project is a simulated implementation based on a real-world use case. All table and column names have been anonymized to protect confidential information.
 
 ## 📊 Project Summary
 

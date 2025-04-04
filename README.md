@@ -99,11 +99,6 @@ The metrics generated were used to feed **analytical dashboards**, support data 
 
 ---
 
-## 🙌 Contributions
-
-This project was developed individually as part of a technical study in **data engineering and performance metric monitoring**. Suggestions and improvements are welcome!
-
-
 ## 📌 Author
 
 Developed by a Data Engineer specializing in PySpark, Data Quality, and Volume Monitoring for large-scale datasets.

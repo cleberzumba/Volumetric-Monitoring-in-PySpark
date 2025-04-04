@@ -60,6 +60,8 @@ Applies multiple filters to exclude outliers before comparing data volumes. Filt
 - Specific flags: `flag_tx_juros = 'TRUE'`, `flag_tx_usado = 'FALSE'`, etc.
 - Non-null constraints: `tipo_pessoa`, `ct_veic_tipo`, `ct_veic_idade`, `uf_licenciamento`, `flag_cvg`, `flag_consorcio`, `cnpj_credor`
 
+Outlier removal was performed through rule-based filtering, applying business logic to exclude invalid financing values, inconsistencies in vehicle attributes, and missing critical fields.
+
 ---
 
 ## 📊 Metrics Calculated

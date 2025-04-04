@@ -44,39 +44,25 @@ Applies multiple filters to exclude outliers before comparing data volumes. Filt
 
 ## 📊 Metrics Calculated
 
-- **valor_metrica_atual**: Current volume count.
-- **valor_metrica_anterior**: Previous volume count.
-- **percentual_variacao**: Percentage change.
+- **current_metric_value**: Current volume count.
+- **previous_metric value**: Previous volume count.
+- **percentage_variation**: Percentage change.
 - **nome_status_metrica**: Status label (OK, ATTENTION, NOT OK).
 - **descricao_status_metrica**: Textual explanation of the percentage range.
-
----
-
-## 🗂️ Project Structure
-
-```
-volume-monitoring-rules/
-│
-├── README.md
-├── notebooks/
-│   └── rule7_rule8_volume_monitoring.ipynb
-├── scripts/
-│   └── rule8_volume_monitoring.py
-```
 
 ---
 
 ## ✅ Execution Example
 
 ```python
-regra8_cubo_omni(sqlContext, "dmaux", "tauxdm_monitoring", "20241130", "20241031")
+regra8_cubo(sqlContext, "owner", "monitoring", "20241130", "20241031")
 ```
 
 ---
 
 ## 📅 Project Duration
 
-The project was developed over the course of **1 month**, including:
+The project was developed over the course of **3 month**, including:
 
 - Understanding complex **business rules**
 - Developing the pipeline in **PySpark**
@@ -94,3 +80,8 @@ The metrics generated were used to feed **analytical dashboards**, support data 
 ## 🙌 Contributions
 
 This project was developed individually as part of a technical study in **data engineering and performance metric monitoring**. Suggestions and improvements are welcome!
+
+
+## 📌 Author
+
+Developed by a Data Engineer specializing in PySpark, Data Quality, and Volume Monitoring for large-scale datasets.

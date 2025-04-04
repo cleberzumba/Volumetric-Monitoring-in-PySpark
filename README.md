@@ -77,7 +77,8 @@ Outlier removal was performed through rule-based filtering, applying business lo
 ## ✅ Execution Example
 
 ```python
-regra8_cubo(sqlContext, "owner", "monitoring", "20241130", "20241031")
+rule7_cubo(sqlContext, "owner", "monitoring", "20241130", "20241031")
+rule8_cubo(sqlContext, "owner", "monitoring", "20241130", "20241031")
 ```
 
 ---
